@@ -1,0 +1,18 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.19.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "employee-crud",
+    "libraryId": "130a1b87-9272-4ec1-b1b3-20dac8f7071c",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "EmployeeCrud",
+    "solutionShortDescription": "EmployeeCrud description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
