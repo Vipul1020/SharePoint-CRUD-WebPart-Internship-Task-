@@ -34,6 +34,7 @@ It demonstrates how to:
 
 ## 🏗️ Project Structure  
 
+```
 src/webparts/
 ├── components/
 │ ├── EmployeeCrud.tsx # Parent component (main list state + CRUD logic)
@@ -43,6 +44,8 @@ src/webparts/
 └── /loc
   └── EmployeeCrudWebPart.ts # Webparts render controller.
   └── pnpConfig.ts # Created for pnp import and avoid version conflict.
+
+```
   
 ---
 
@@ -53,11 +56,15 @@ src/webparts/
    git clone https://github.com/Vipul1020/sharepoint-crud-webpart.git
    cd sharepoint-crud-webpart
 
-2. Install Dependencies - npm install
+2. Install Dependencies
+   ```
+   npm install
+   
+   ```
 
-3. Start local workbench - gulp serve
+4. Start local workbench - gulp serve
 
-4. Test on SharePoint Workbench - https://yourtenant.sharepoint.com/_layouts/15/workbench.aspx
+5. Test on SharePoint Workbench - https://yourtenant.sharepoint.com/_layouts/15/workbench.aspx
 
 ---
 
