@@ -53,7 +53,7 @@ src/webparts/
 
 1. Clone the repo  
    ```bash
-   git clone https://github.com/Vipul1020/sharepoint-crud-webpart.git
+   git clone https://github.com/Vipul1020/sharepoint-crud-webpart-internship-task.git
    cd sharepoint-crud-webpart
 
 2. Install Dependencies
@@ -62,9 +62,16 @@ src/webparts/
    
    ```
 
-4. Start local workbench - gulp serve
+4. Start local workbench
+  ```
+  gulp serve
 
-5. Test on SharePoint Workbench - https://yourtenant.sharepoint.com/_layouts/15/workbench.aspx
+  ```
+7. Test on SharePoint Workbench
+  ```
+   https://yourtenant.sharepoint.com/_layouts/15/workbench.aspx
+
+  ```
 
 ---
 
