@@ -35,13 +35,10 @@ type EmployeeItem = {
   Email?: string;
   EmployeeID?: string;
   DateOfJoining?: string;
-  // person field
   PeoplepICKER?: SPUserField;
 };
 
-// === CHANGE THIS to your Person column internal name ===
 const PERSON_FIELD_INTERNAL_NAME = "PeoplepICKER";
-// ======================================================
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const generateEmployeeId = (): string => `EMP-${Date.now()}`;
@@ -70,28 +67,25 @@ const EmployeeCrud: React.FC<IEmployeeCrudProps> = (props) => {
     msGraphClientFactory: props.context.msGraphClientFactory,
   };
 
-  // Helper: extract an identifier (loginName/email/key) from PeoplePicker item
   const extractUserIdentifier = (pickerItem: any): string | null => {
     if (!pickerItem) return null;
     return (
       pickerItem.loginName ||
       pickerItem.key ||
       pickerItem.id ||
-      pickerItem.secondaryText || // usually email
+      pickerItem.secondaryText ||
       pickerItem.email ||
       pickerItem.text ||
       null
     );
   };
 
-  // Ensure SP user exists and return SP user id
   const ensureSpUserId = async (
     userIdentifier: string
   ): Promise<number | null> => {
     if (!userIdentifier) return null;
     try {
       const ensured = await sp.web.ensureUser(userIdentifier);
-      // pnpjs shape varies by version; try common locations
       const spUserId =
         (ensured && (ensured as any).data && (ensured as any).data.Id) ||
         (ensured && (ensured as any).Id) ||
@@ -103,7 +97,6 @@ const EmployeeCrud: React.FC<IEmployeeCrudProps> = (props) => {
     }
   };
 
-  // Load items — include person field via select + expand
   const loadItems = React.useCallback(async () => {
     setLoading(true);
     try {
@@ -171,7 +164,6 @@ const EmployeeCrud: React.FC<IEmployeeCrudProps> = (props) => {
         DateOfJoining: dojIso,
       };
 
-      // If a person was selected, resolve to SP user id and set <FieldInternalName>Id
       if (selectedPeople && selectedPeople.length > 0) {
         const identifier = extractUserIdentifier(selectedPeople[0]);
         const spUserId = await ensureSpUserId(identifier || "");
